@@ -1,0 +1,42 @@
+@import "tailwindcss";
+@import "@fontsource-variable/geist";
+
+@theme {
+  --font-sans: "Geist Variable", sans-serif;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+  scrollbar-width: none;
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar,
+#root::-webkit-scrollbar {
+  display: none;
+}
+
+@layer base {
+  html {
+    @apply font-sans;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply inline-flex cursor-pointer items-center gap-1.5 rounded-md bg-stone-900 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-stone-700;
+  }
+  .btn-secondary {
+    @apply bg-white text-stone-900 ring-1 ring-stone-300 hover:bg-stone-100;
+  }
+  .btn-icon {
+    @apply p-2;
+  }
+  .badge {
+    @apply inline-flex items-center gap-1.5 rounded-md bg-stone-900 px-2.5 py-1 font-mono text-sm text-white;
+  }
+}
